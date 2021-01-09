@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rubik:wght@300;400;500&display=swap");
+// h1 : font-family: 'Audiowide', cursive;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+@mixin btn-p($p, $fw, $radius) {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: $p;
+  border-radius: $radius;
+  font-weight: $fw;
+  cursor: pointer;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 3px solid rgba(43, 43, 43, 0.25);
+  border-radius: 5px;
+  padding: 10px calc(15% / 2);
+  img {
+    height: 40px;
+    width: 100px;
+    shape-outside: url(../assets/PG-13.svg);
+  }
+}
+.hamburger-menu {
+  display: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+.it_is_on {
+  transition: transform 250ms;
+  transform: scale(1.3);
+}
+.shownav {
+  transition: all 250ms;
+  visibility: visible;
+  top: 70px;
+}
+.mobile-nav {
+  display: none;
+}
+nav ul li {
+  /*class for nav items (li>a)*/
+  list-style: none;
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+  .nav_item {
+    height: 35px;
+    width: 35px;
+    background-position: 0 0;
+    background-size: cover;
+    transition: opacity 250ms, transform 500ms;
+    &:hover {
+      transform: scale(1.3);
+      opacity: 0.8;
+    }
+  }
+
+  /*single class for nav item to add background image(li>a:img)*/
+  .home {
+    background-image: url(../assets/icons/home-icon.svg);
+  }
+  .messenger {
+    background-image: url(../assets/icons/messenger-icon.svg);
+  }
+  .notification {
+    background-image: url(../assets/icons/notification-icon.svg);
+  }
+  .friends {
+    background-image: url(../assets/icons/friends-icon.svg);
+  }
+  .profile {
+    background-image: url(../assets/icons/avatar.jpg);
+    border-radius: 50%;
+  }
+}
+nav {
+  position: relative;
+}
+.profile-settings {
+  position: absolute;
+  visibility: hidden;
+  z-index: 33;
+  background-color: rgb(247, 247, 247);
+  box-shadow: 6px 18px 12px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+  width: 70%;
+  right: 0;
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 30px;
+    li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 30px 0;
+      &:first-child ~ * {
+        border-top: 3px solid #bdbdbd;
+      }
+      img {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        &:first-child {
+          height: 40px;
+          width: 40px;
+        }
+      }
+      span {
+        margin-left: 30px;
+      }
+      p {
+        margin: 0 70px;
+        a {
+          color: #6d6d6d;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+.it_is_on {
+  transition: transform 250ms;
+  transform: scale(1.3);
+}
+.shownav {
+  transition: all 250ms;
+  visibility: visible;
+  top: 75px;
+}
+.mobile-nav {
+  display: none;
+}
+p,
+h1,
+h2,
+.poster {
+  width: 85%;
+  margin: 0 auto;
+  text-align: justify;
+  figcaption {
+    color: #605353;
+    margin-top: 15px;
+  }
+}
+h1,
+h2 {
+  text-align: left;
+  text-transform: uppercase;
+}
+h2 {
+  font-weight: 400 !important;
+}
+p {
+  font-weight: 300;
+}
+.poster,
+.bigText,
+.warn {
+  text-align: center;
+}
+.poster {
+  .blurMain {
+    position: relative;
+    img {
+      height: auto;
+      width: 100%;
+    }
+    .blur {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      backdrop-filter: blur(60px);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      .bigText {
+        font-size: 33px;
+      }
+      button {
+        @include btn-p(10px 15px, 300, 3px);
+      }
+    }
+  }
+}
+
+/*group of photos (includes: bunny, beach, gloves)*/
+.bluredphotos {
+  box-sizing: border-box;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 3fr);
+  grid-gap: 20px;
+  text-align: center;
+  img {
+    height: 300px;
+    width: 100%;
+  }
+  button {
+    @include btn-p(10px 15px, 400, 25px);
+  }
+
+  .blurMain {
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+}
+.blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(60px);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding-top: 22%;
+
+  button {
+    margin: 20px auto;
+  }
+  .bigText {
+    font-size: 23px;
+  }
+}
